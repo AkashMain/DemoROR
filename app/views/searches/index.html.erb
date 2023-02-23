@@ -1,0 +1,17 @@
+<h1> Google Search </h1>
+<br>
+
+<%= link_to 'Search','https://www.google.com/' %>
+
+<br>
+<br>
+<ul>
+  <% @searches.each do |search| %>
+    <li>
+        <% str=search.name.split.join('+')%>    
+        <% url='https://www.google.com/search?q='%>
+        <%= link_to search.name, url+str %>
+    </li>
+  <% end %>
+</ul>
+
