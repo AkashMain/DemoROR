@@ -4,8 +4,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @q = Article.ransack(params[:q])
-    @articles = @q.result(distinct: true) 
   end
 
   def show
